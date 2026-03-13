@@ -10,7 +10,7 @@ import FooterSection from "@/app/components/FooterSection";
 
 // Page-level metadata — more specific than global fallback in layout.tsx
 export const metadata: Metadata = {
-  title: "Website Instan UMKM — Jasa Pembuatan Website Murah & Cepat",
+  title: "BI Booster — Jasa Pembuatan Website Instan & Murah",
   description:
     "BI Booster: jasa pembuatan website toko online untuk UMKM. Template website bisnis siap pakai, digitalisasi UMKM dalam hitungan menit. Daftar gratis!",
   alternates: {
@@ -33,7 +33,7 @@ const jsonLd: WithContext<LocalBusiness> = {
   description:
     "Platform pembuatan website instan terbaik untuk UMKM Indonesia. Pilih template, sesuaikan, dan online tanpa coding.",
   url: "https://bibooster.agency",
-  logo: "https://bibooster.agency/logo.png",
+  logo: "https://bibooster.agency/favicon.jpg",
   image: "https://bibooster.agency/og-image.jpg",
   email: "halo@bibooster.agency",
   priceRange: "Rp",
@@ -44,7 +44,7 @@ const jsonLd: WithContext<LocalBusiness> = {
   },
   sameAs: [
     "https://www.instagram.com/bibooster.apps/",
-    "https://tiktok.com/@bibooster.agency",
+    "https://tiktok.com/@bibooster.apps",
   ],
 };
 

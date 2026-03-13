@@ -11,16 +11,16 @@ import {
 } from "@/app/utils/static/static_templates";
 
 export const metadata: Metadata = {
-  title: "Katalog Template Website UMKM Premium",
+  title: "Template Website Premium Untuk UMKM",
   description:
-    "Eksplorasi puluhan template website responsif untuk berbagai kategori bisnis UMKM: Kuliner, Fashion, Jasa, dan Retail. Pilih dan online dalam menit!",
+    "Eksplorasi puluhan template website premium untuk berbagai kategori bisnis UMKM: Kuliner, Fashion, Jasa, dan Retail. Pilih dan online dalam menit!",
   alternates: {
     canonical: "https://bibooster.agency/templates",
   },
   openGraph: {
-    title: "Katalog Template Website UMKM Premium | BI Booster",
+    title: "BI Booster - Template Website Premium",
     description:
-      "Eksplorasi puluhan template website responsif untuk berbagai kategori bisnis UMKM: Kuliner, Fashion, Jasa, dan Retail.",
+      "Eksplorasi puluhan template website premium untuk berbagai kategori bisnis UMKM: Kuliner, Fashion, Jasa, dan Retail.",
     url: "https://bibooster.agency/templates",
     type: "website",
   },

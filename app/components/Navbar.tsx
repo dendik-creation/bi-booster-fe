@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { href: "/#beranda", label: "Beranda" },
@@ -26,11 +27,9 @@ export default function Navbar() {
       >
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <span className="w-8 h-8 rounded-lg bg-[#2563eb] flex items-center justify-center text-white font-black text-sm shadow-lg group-hover:scale-105 transition-transform">
-            BI
-          </span>
+          <Image src="/favicon.jpg" alt="Logo" width={40} height={40} />
           <span className="text-xl font-black tracking-tight text-[#111827]">
-            Booster
+            BI Booster
           </span>
         </Link>
 

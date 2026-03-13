@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Instagram, Music2, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
 
 const quickLinks = [
   { href: "#beranda", label: "Beranda" },
@@ -17,11 +18,9 @@ export default function FooterSection() {
           {/* Brand column */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4 group w-fit">
-              <span className="w-9 h-9 rounded-xl bg-[#2563eb] flex items-center justify-center text-white font-black text-sm shadow-lg">
-                BI
-              </span>
+              <Image src="/favicon.jpg" alt="Logo" width={40} height={40} />
               <span className="text-2xl font-black text-white tracking-tight">
-                Booster
+                BI Booster
               </span>
             </Link>
             <p className="text-sm text-[#9ca3af] leading-relaxed max-w-xs">
@@ -31,7 +30,7 @@ export default function FooterSection() {
             {/* Socials */}
             <div className="flex items-center gap-3 mt-5">
               <a
-                href="https://instagram.com/bibooster.agency"
+                href="https://www.instagram.com/bibooster.apps/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-xl bg-white/10 hover:bg-[#2563eb] flex items-center justify-center text-white/70 hover:text-white transition-all duration-200 min-h-[44px] min-w-[44px]"
@@ -40,7 +39,7 @@ export default function FooterSection() {
                 <Instagram size={18} />
               </a>
               <a
-                href="https://tiktok.com/@bibooster.agency"
+                href="https://www.tiktok.com/@bibooster.apps"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-xl bg-white/10 hover:bg-[#2563eb] flex items-center justify-center text-white/70 hover:text-white transition-all duration-200 min-h-[44px] min-w-[44px]"

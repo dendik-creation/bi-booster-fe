@@ -84,7 +84,7 @@ export default function HeroSection() {
         <div className="relative flex items-center justify-center">
           <div className="relative w-full max-w-md mx-auto">
             {/* Floating card mockup */}
-            <div className="relative rounded-2xl bg-white border-2 border-[#e2e8f0] shadow-2xl overflow-hidden aspect-4/3">
+            <div className="relative rounded-2xl bg-white border-2 border-[#e2e8f0] shadow-2xl overflow-hidden aspect-4/3 flex flex-col">
               {/* Browser bar */}
               <div className="flex items-center gap-2 px-4 py-3 bg-[#f8fafc] border-b border-[#e2e8f0]">
                 <div className="flex gap-1.5">
@@ -94,52 +94,44 @@ export default function HeroSection() {
                 </div>
                 <div className="flex-1 mx-3 h-6 rounded-md bg-white border border-[#e2e8f0] flex items-center px-3">
                   <span className="text-xs text-[#6b7280]">
-                    hostingku.bibooster.agency
+                    umkmku.bibooster.agency
                   </span>
                 </div>
               </div>
 
               {/* Website preview */}
-              <div className="p-4 bg-linear-to-br from-orange-50 to-amber-50 h-full flex flex-col gap-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-orange-400 flex items-center justify-center text-white font-bold text-sm">
-                    W
-                  </div>
-                  <div>
-                    <div className="h-3 w-28 bg-orange-300 rounded-full" />
-                    <div className="h-2 w-20 bg-orange-200 rounded-full mt-1" />
+              <div className="p-4 bg-linear-to-br from-orange-50 to-amber-100 flex-1 flex flex-col">
+                {/* Navbar mini */}
+                <div className="flex items-center justify-between mb-6">
+                  {/* Logo wireframe */}
+                  <div className="w-6 h-6 rounded-full bg-orange-200" />
+                  {/* Nav links wireframe */}
+                  <div className="flex gap-2">
+                    <div className="w-6 h-1 rounded-full bg-orange-200/70" />
+                    <div className="w-6 h-1 rounded-full bg-orange-200/70" />
+                    <div className="w-6 h-1 rounded-full bg-orange-200/70" />
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-2 mt-1">
-                  {[
-                    { label: "Hosting Unlimited", price: "Rp 15.000" },
-                    { label: "Domain my.id", price: "Rp 18.000" },
-                    { label: "Email Bisnis", price: "Rp 5.000" },
-                    { label: "SSL Premium", price: "Rp 25.000" },
-                  ].map((item) => (
-                    <div
-                      key={item.label}
-                      className="bg-white rounded-xl p-2 border border-orange-100 shadow-sm"
-                    >
-                      <div className="h-8 w-full bg-orange-100 rounded-lg mb-2" />
-                      <div className="text-xs font-semibold text-[#111827] truncate">
-                        {item.label}
-                      </div>
-                      <div className="text-xs text-orange-600 font-bold">
-                        {item.price}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-auto bg-orange-500 rounded-xl py-2 text-center text-white text-xs font-bold shadow-sm">
-                  Pesan Sekarang
+
+                {/* Hero content mini */}
+                <div className="flex flex-col items-center justify-center flex-1 text-center -mt-4">
+                  <div className="space-y-2 mb-3 w-full flex flex-col items-center">
+                    <div className="w-3/4 h-4 rounded-md bg-orange-300" />
+                    <div className="w-1/2 h-4 rounded-md bg-orange-300" />
+                  </div>
+                  <div className="space-y-1.5 w-full flex flex-col items-center">
+                    <div className="w-2/3 h-1.5 rounded-full bg-orange-200" />
+                    <div className="w-1/2 h-1.5 rounded-full bg-orange-200" />
+                  </div>
+                  {/* CTA button mini */}
+                  <div className="w-20 h-6 rounded-md bg-orange-500 mt-5 shadow-sm" />
                 </div>
               </div>
             </div>
 
             {/* Floating badges */}
-            <div className="absolute -top-4 -right-4 bg-green-500 text-white rounded-xl px-3 py-2 shadow-lg text-xs font-bold flex items-center gap-1.5 animate-bounce">
-              Live Online!
+            <div className="absolute -top-4 -right-4 bg-green-500 text-white rounded-xl px-3 py-2 shadow-lg text-xs font-bold flex items-center gap-1.5 animate-pulse">
+              Langsung Online!
             </div>
             <div className="absolute -bottom-4 -left-4 bg-white border-2 border-[#e2e8f0] rounded-xl px-3 py-2 shadow-lg text-xs font-semibold text-[#374151] flex items-center gap-1.5">
               <span className="text-yellow-400">★★★★★</span>
