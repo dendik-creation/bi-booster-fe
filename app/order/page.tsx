@@ -71,7 +71,7 @@ function OrderContent() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const onSubmit = async (data: OrderFormValues) => {
+  const onSubmit = async () => {
     if (currentStep < 4) {
       // Mencegah submit tidak sengaja jika user menekan 'Enter' di input pada step sebelumnya
       handleNext();
@@ -93,64 +93,68 @@ function OrderContent() {
       <FormProvider {...methods}>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="max-w-7xl mx-auto px-4 mt-8"
+          className="max-w-7xl mx-auto px-4 mt-8 flex flex-col lg:flex-row gap-6 lg:gap-10 lg:items-start"
         >
-          <Stepper currentStep={currentStep} />
-
-          <div className="mt-8 transition-all duration-300">
-            {currentStep === 1 && <Step1TemplateSelection />}
-            {currentStep === 2 && <Step2BusinessInfo />}
-            {currentStep === 3 && <Step3AdditionalInfo />}
-            {currentStep === 4 && (
-              <Step4ReviewForm onEditStep={setCurrentStep} />
-            )}
-            {currentStep === 5 && <Step5ResultPreview values={getValues()} />}
+          <div className="lg:sticky lg:top-28 z-20 shrink-0 w-full lg:w-auto">
+            <Stepper currentStep={currentStep} />
           </div>
 
-          {/* Navigation Footer */}
-          {currentStep < 5 && (
-            <div className="mt-12 flex items-center justify-between max-w-2xl mx-auto gap-4 border-t border-[#e2e8f0] pt-6">
-              {currentStep > 1 ? (
-                <button
-                  type="button"
-                  onClick={handlePrev}
-                  className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-[#6b7280] hover:text-[#111827] hover:bg-white transition-colors border-2 border-transparent hover:border-[#e2e8f0]"
-                >
-                  <ArrowLeft size={18} /> Kembali
-                </button>
-              ) : (
-                <div></div>
+          <div className="flex-1 min-w-0 transition-all duration-300 flex flex-col w-full">
+            <div className="w-full">
+              {currentStep === 1 && <Step1TemplateSelection />}
+              {currentStep === 2 && <Step2BusinessInfo />}
+              {currentStep === 3 && <Step3AdditionalInfo />}
+              {currentStep === 4 && (
+                <Step4ReviewForm onEditStep={setCurrentStep} />
               )}
-
-              {currentStep < 4 ? (
-                <button
-                  key="next-btn"
-                  type="button"
-                  onClick={handleNext}
-                  className="flex items-center gap-2 px-8 py-3 rounded-xl font-bold text-white bg-[#2563eb] hover:bg-[#1d4ed8] active:scale-95 transition-all shadow-lg shadow-blue-500/20"
-                >
-                  Lanjut <ArrowRight size={18} />
-                </button>
-              ) : (
-                <button
-                  key="submit-btn"
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="flex items-center gap-2 px-8 py-3 rounded-xl font-bold text-white bg-green-500 hover:bg-green-600 active:scale-95 transition-all shadow-lg shadow-green-500/20 disabled:opacity-70 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 size={18} className="animate-spin" /> Merekap...
-                    </>
-                  ) : (
-                    <>
-                      <Rocket size={18} /> Generate
-                    </>
-                  )}
-                </button>
-              )}
+              {currentStep === 5 && <Step5ResultPreview values={getValues()} />}
             </div>
-          )}
+
+            {/* Navigation Footer */}
+            {currentStep < 5 && (
+              <div className="mt-12 flex items-center justify-between w-full max-w-2xl mx-auto gap-4 border-t border-[#e2e8f0] pt-6">
+                {currentStep > 1 ? (
+                  <button
+                    type="button"
+                    onClick={handlePrev}
+                    className="flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-[#4b5563] bg-white border-2 border-[#e2e8f0] hover:bg-gray-50 active:scale-95 transition-all outline-none"
+                  >
+                    <ArrowLeft size={18} /> Kembali
+                  </button>
+                ) : (
+                  <div></div>
+                )}
+
+                {currentStep < 4 ? (
+                  <button
+                    key="next-btn"
+                    type="button"
+                    onClick={handleNext}
+                    className="flex items-center gap-2 px-8 py-3 rounded-xl font-bold text-white bg-[#2563eb] hover:bg-[#1d4ed8] active:scale-95 transition-all shadow-lg shadow-blue-500/20"
+                  >
+                    Lanjut <ArrowRight size={18} />
+                  </button>
+                ) : (
+                  <button
+                    key="submit-btn"
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="flex items-center gap-2 px-8 py-3 rounded-xl font-bold text-white bg-green-500 hover:bg-green-600 active:scale-95 transition-all shadow-lg shadow-green-500/20 disabled:opacity-70 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 size={18} className="animate-spin" /> Merekap...
+                      </>
+                    ) : (
+                      <>
+                        <Rocket size={18} /> Generate
+                      </>
+                    )}
+                  </button>
+                )}
+              </div>
+            )}
+          </div>
         </form>
       </FormProvider>
     </div>
