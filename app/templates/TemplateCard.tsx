@@ -6,11 +6,13 @@ import type { Template } from "@/app/utils/static/static_templates";
 interface TemplateCardProps {
   template: Template;
   categoryName: string;
+  withAction?: boolean;
 }
 
 export default function TemplateCard({
   template,
   categoryName,
+  withAction = true,
 }: TemplateCardProps) {
   return (
     <article className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full group">
@@ -56,24 +58,24 @@ export default function TemplateCard({
         </p>
 
         {/* Action buttons */}
-        <div className="grid grid-cols-2 gap-3 mt-auto">
-          <Link
-            // href={`/templates/${template.slug}`}
-            href={`#`}
-            className="flex items-center justify-center gap-1.5 py-2.5 rounded-lg border border-[#2563eb] text-[#2563eb] bg-transparent text-sm font-semibold hover:bg-blue-50 transition-colors duration-200"
-          >
-            <Eye size={15} />
-            Preview
-          </Link>
-          <Link
-            // href={`/order?template=${template.slug}`}
-            href={`#`}
-            className="flex items-center justify-center gap-1.5 py-2.5 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold transition-colors duration-200"
-          >
-            <ShoppingCart size={15} />
-            Pesan
-          </Link>
-        </div>
+        {withAction && (
+          <div className="grid grid-cols-2 gap-3 mt-auto">
+            <Link
+              href={`#`}
+              className="flex items-center justify-center gap-1.5 py-2.5 rounded-lg border border-[#2563eb] text-[#2563eb] bg-transparent text-sm font-semibold hover:bg-blue-50 transition-colors duration-200"
+            >
+              <Eye size={15} />
+              Preview
+            </Link>
+            <Link
+              href={`/order?template=${template.slug}`}
+              className="flex items-center justify-center gap-1.5 py-2.5 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold transition-colors duration-200"
+            >
+              <ShoppingCart size={15} />
+              Pesan
+            </Link>
+          </div>
+        )}
       </div>
     </article>
   );

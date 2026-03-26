@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Zap, LayoutTemplate, Smartphone } from "lucide-react";
 
 const counters = [
-  { label: "Website Aktif", value: "100+", numeric: 100 },
+  { label: "Website Aktif", value: "60+", numeric: 60 },
   { label: "UMKM Terbantu", value: "60+", numeric: 60 },
   { label: "Pilihan Template", value: "80+", numeric: 80 },
 ];

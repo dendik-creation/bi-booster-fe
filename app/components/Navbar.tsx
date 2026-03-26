@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, ArrowLeft } from "lucide-react";
 import Image from "next/image";
 
 const navLinks = [
@@ -13,8 +13,37 @@ const navLinks = [
   { href: "/#contact", label: "Kontak Kami" },
 ];
 
-export default function Navbar() {
+export default function Navbar({
+  isOrderPage = false,
+}: {
+  isOrderPage?: boolean;
+}) {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  if (isOrderPage) {
+    return (
+      <header className="bg-white border-b border-[#e2e8f0] py-4 px-6 sticky top-0 z-50 shadow-[0_1px_3px_0_rgba(0,0,0,0.02)]">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2 group">
+            <Image src="/favicon.jpg" alt="Logo" width={40} height={40} />
+            <span className="text-xl font-black tracking-tight text-[#111827]">
+              BI Booster
+            </span>
+          </Link>
+          <div className="hidden md:flex">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-red-500 text-white text-sm font-semibold hover:bg-red-600 active:scale-95 transition-all duration-200 shadow-md shadow-red-200"
+            >
+              <ArrowLeft size={15} />
+              Kembali
+            </Link>
+          </div>
+        </div>
+      </header>
+    );
+  }
 
   return (
     <header
@@ -50,10 +79,10 @@ export default function Navbar() {
         {/* CTA Desktop */}
         <div className="hidden md:flex">
           <Link
-            href="#hero-cta"
+            href="/templates"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#2563eb] text-white text-sm font-semibold hover:bg-[#1d4ed8] active:scale-95 transition-all duration-200 shadow-md shadow-blue-200"
           >
-            Mulai Sekarang
+            Buat Website
             <ArrowRight size={15} />
           </Link>
         </div>

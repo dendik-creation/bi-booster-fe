@@ -74,8 +74,8 @@ export default function HeroSection() {
               <Monitor size={18} className="text-blue-600" />
             </div>
             <p className="text-sm text-[#6b7280]">
-              <strong className="text-[#111827]">1,200+ UMKM</strong> sudah
-              online bersama BI Booster
+              <strong className="text-[#111827]">60+ UMKM</strong> sudah online
+              bersama BI Booster
             </p>
           </div>
         </div>
@@ -94,7 +94,7 @@ export default function HeroSection() {
                 </div>
                 <div className="flex-1 mx-3 h-6 rounded-md bg-white border border-[#e2e8f0] flex items-center px-3">
                   <span className="text-xs text-[#6b7280]">
-                    umkmku.bibooster.agency
+                    umkmku.bibooster.id
                   </span>
                 </div>
               </div>
