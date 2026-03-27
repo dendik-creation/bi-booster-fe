@@ -1,3 +1,5 @@
+"use client";
+
 import { OrderFormValues } from "../schema";
 import { Check, ExternalLink, Sparkles } from "lucide-react";
 import Link from "next/link";
@@ -54,9 +56,11 @@ export default function Step5ResultPreview({ values }: Step5Props) {
         setHeroPlaceholder(hero);
       }
     };
+
+    findHeroBySlugValues();
+
     return () => {
       clearTimeout(timer);
-      findHeroBySlugValues();
     };
   }, [values.templateSlug]);
 

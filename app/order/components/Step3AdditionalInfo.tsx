@@ -1,3 +1,5 @@
+"use client";
+
 import { useFormContext } from "react-hook-form";
 import { OrderFormValues } from "../schema";
 import { Lightbulb } from "lucide-react";

@@ -1,3 +1,5 @@
+"use client";
+
 import { useFormContext, useFieldArray } from "react-hook-form";
 import { OrderFormValues } from "../schema";
 import { Plus, Trash } from "lucide-react";
