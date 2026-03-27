@@ -113,11 +113,8 @@ export default function Step5ResultPreview({ values }: Step5Props) {
             <div className="w-3 h-3 rounded-full bg-green-400" />
           </div>
           <div className="flex-1 mx-3 h-7 rounded-md bg-white border border-[#e2e8f0] flex items-center px-3 gap-2 overflow-hidden text-ellipsis">
-            <span className="text-xs text-[#9ca3af] whitespace-nowrap">
-              https://
-            </span>
-            <span className="text-xs text-[#111827] font-medium truncate">
-              {values.subdomain}
+            <span className="text-xs text-[#575a5f] whitespace-nowrap">
+              https://{values.subdomain}
               {values.domainExtension}
             </span>
           </div>
